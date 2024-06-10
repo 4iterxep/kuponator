@@ -1,0 +1,16 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+            <section class="top" style="background: url('{% static 'main/img/bg_main/bg.jpg' %}') no-repeat center / cover;">
+                <div class="container" style="">
+                    <h1 style="">Купонатор Курск - это сайт который собрал в себе огромное количество скидочных купонов для различных магазинов Курска</h1>
+                    <a href="kuponi" class="top-link" style="font-size: 25px;">
+                        Просмотреть купоны
+                    </a>
+                </div>
+            </section>
+{% endblock %}

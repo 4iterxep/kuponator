@@ -1,0 +1,27 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block kuponchiki %}#{% endblock %}
+
+{% block search %}
+<form class="search" action="{% url 'search_results' %}" method="get">
+    <input type="text" name="q" placeholder="Введите название магазина ..." required>
+    <button type="submit">Поиск</button>
+</form>
+{% endblock %}
+
+{% block title %}Купоны{% endblock %}
+
+{% block content %}
+<div class=" container row align-items-center" style="margin-left: 250px;">
+    {% for el in kupons %}
+        <div class="alert alert-dark col" style="margin: 5px;max-width:400px;max-height:130px;min-width:400px;min-height:130px;">
+            <h3>{{ el.title }}</h3>
+            <p>{{ el.description }}</p>
+            <a href="{% url 'kupon_detail' el.id %}" class="btn btn-warning">Подробнее</a>
+        </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

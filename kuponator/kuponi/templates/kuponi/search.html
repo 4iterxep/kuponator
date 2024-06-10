@@ -1,0 +1,19 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block kuponchiki %}#{% endblock %}
+
+{% block title %}Поиск купонов{% endblock %}
+
+{% block content %}
+
+<div class=" container row align-items-center" style="margin-left: 250px;">
+    {% for el in object_list %}
+        <div class="alert alert-dark col" style="margin: 5px;max-width:400px;max-height:130px;min-width:400px;min-height:130px;">
+            <h3>{{ el.title }}</h3>
+            <p>{{ el.description }}</p>
+
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
